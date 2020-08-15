@@ -45,21 +45,22 @@ class HabitController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $input['user_id'] = Auth::id();
-        $this->habit->fill($input)->save();
+        $inputs = $request->all();
+        $inputs['user_id'] = Auth::id();
+        $this->habit->fill($inputs)->save();
         return redirect()->route('habit.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $habit_id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($habit_id)
     {
-        //
+        $habit = $this->habit->find($habit_id);
+        return view('/habit/show', compact('habit'));
     }
 
     /**
