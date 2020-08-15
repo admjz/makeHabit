@@ -12,6 +12,7 @@ class HabitController extends Controller
 
     public function __construct(Habit $HabitInstance)
     {
+        $this->middleware('auth');
         $this->habit = $HabitInstance;
     }
 
