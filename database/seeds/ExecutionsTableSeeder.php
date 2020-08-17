@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class ExecDatesTableSeeder extends Seeder
+class ExecutionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +12,8 @@ class ExecDatesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('exec_dates')->truncate();
-        DB::table('exec_dates')->insert([
+        DB::table('executions')->truncate();
+        DB::table('executions')->insert([
             [
                 'habit_id' => 1,
                 'contents'   => 'Laravel',

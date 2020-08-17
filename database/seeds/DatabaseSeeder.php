@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             HabitsTableSeeder::class,
-            ExecDatesTableSeeder::class,
+            ExecutionsTableSeeder::class,
         ]);
     }
 }
