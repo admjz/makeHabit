@@ -60,7 +60,7 @@ class HabitController extends Controller
     public function show($habit_id)
     {
         $habit = $this->habit->find($habit_id);
-        $exec_dates = Habit::find($habit_id)->exec_dates();
+        $exec_dates = Habit::find($habit_id)->exec_dates;
         return view('/habit/show', compact('habit', 'exec_dates'));
     }
 
