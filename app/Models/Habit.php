@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Habit extends Model
 {
-    public function exec_dates()
+    public function executions()
     {
-        return $this->hasMany('App\Models\ExecDate');
+        return $this->hasMany('App\Models\Execution');
     }
 
     protected $fillable = [
