@@ -10,14 +10,14 @@
       <th>Title</th>
       <td>{{ $habit->title }}</td>
     </tr>
-    @foreach($exec_dates as $exec_date)
+    @foreach($executions as $execution)
       <tr>
         <th>実施日</th>
-        <td>{{ $exec_date->created_at->format('Y/m/d') }}</td>
+        <td>{{ $execution->created_at->format('Y/m/d') }}</td>
       </tr>
       <tr>
         <th>実施内容</th>
-        <td>{{ $exec_date->contents }}</td>
+        <td>{{ $execution->contents }}</td>
       </tr>
     @endforeach
 </table>
