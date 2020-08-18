@@ -17,9 +17,14 @@
         </tr>
     </table>
   </a>
-  {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-    {!! Form::button('この習慣を削除する', ['type' => 'submit'])!!}
-  {!! Form::close()!!}
+  <div>
+    <a href="{{ route('habit.edit', $habit->id) }}">タイトルを編集する</a>
+  </div>
+  <div>
+    {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
+      {!! Form::button('この習慣を削除する', ['type' => 'submit'])!!}
+    {!! Form::close()!!}
+  </div>
 @endforeach
 
 @endsection
