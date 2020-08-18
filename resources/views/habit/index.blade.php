@@ -17,6 +17,9 @@
         </tr>
     </table>
   </a>
+  {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
+    {!! Form::button('削除', ['type' => 'submit'])!!}
+  {!! Form::close()!!}
 @endforeach
 
 @endsection
