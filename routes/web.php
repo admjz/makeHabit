@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('habit', 'HabitController');
+
+Route::post('/execution', 'ExecutionController@store')->name('execution.store');
