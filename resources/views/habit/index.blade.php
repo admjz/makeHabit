@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-  <a href="{{ route('habit.create') }}">新規作成</a>
+  <a href="{{ route('habit.create') }}">習慣にしたいことを新規作成する</a>
 </div>
 @foreach ($habits as $habit)
   <a href="{{ route('habit.show', $habit->id) }}">
@@ -18,7 +18,7 @@
     </table>
   </a>
   {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-    {!! Form::button('削除', ['type' => 'submit'])!!}
+    {!! Form::button('この習慣を削除する', ['type' => 'submit'])!!}
   {!! Form::close()!!}
 @endforeach
 
