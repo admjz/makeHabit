@@ -70,9 +70,10 @@ class HabitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($habitId)
     {
-        //
+        $habit = $this->habit->find($habitId);
+        return view('/habit/edit', compact('habit'));
     }
 
     /**
@@ -82,9 +83,12 @@ class HabitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $habitId)
     {
-        //
+        $inputs = $request->all();
+        $this->habit->find($habitId)->fill($inputs)->save();
+        return redirect()->route('habit.index');
+
     }
 
     /**
