@@ -57,10 +57,10 @@ class HabitController extends Controller
      * @param  int  $habit_id
      * @return \Illuminate\Http\Response
      */
-    public function show($habit_id)
+    public function show($habitId)
     {
-        $habit = $this->habit->find($habit_id);
-        $executions = Habit::find($habit_id)->executions;
+        $habit = $this->habit->find($habitId);
+        $executions = Habit::find($habitId)->executions;
         return view('/habit/show', compact('habit', 'executions'));
     }
 
@@ -93,8 +93,9 @@ class HabitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($habitId)
     {
-        //
+        $this->habit->find($habitId)->delete();
+        return redirect()->route('habit.index');
     }
 }
