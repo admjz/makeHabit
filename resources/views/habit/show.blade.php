@@ -22,8 +22,10 @@
     @endforeach
 </table>
 <div>
-  {!! Form::open(['route' => 'habit.store']) !!}
-    {!! Form::submit('実施')!!}
+  {!! Form::open(['route' => 'execution.store']) !!}
+    {!! Form::hidden('habit_id', $habit->id)!!}
+    {!! Form::text('contents', '', ['placeholder' => 'やった内容を記入できます'])!!}
+    {!! Form::submit('実施しました！')!!}
   {!! Form::close() !!}
 </div>
 
