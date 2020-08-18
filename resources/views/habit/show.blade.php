@@ -21,5 +21,10 @@
       </tr>
     @endforeach
 </table>
+<div>
+  {!! Form::open(['route' => 'habit.store']) !!}
+    {!! Form::submit('実施')!!}
+  {!! Form::close() !!}
+</div>
 
 @endsection
