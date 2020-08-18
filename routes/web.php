@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('habit', 'HabitController');
 
-Route::post('/execution', 'ExecutionController@store')->name('execution.store');
+Route::resource('execution', 'ExecutionController', ['only' => ['store', 'edit', 'update', 'destroy']]);
