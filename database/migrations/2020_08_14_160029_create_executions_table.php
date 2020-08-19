@@ -18,6 +18,7 @@ class CreateExecutionsTable extends Migration
             $table->integer('habit_id');
             $table->string('contents')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
