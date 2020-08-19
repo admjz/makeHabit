@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Execution;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExecutionController extends Controller
 {
@@ -11,6 +12,7 @@ class ExecutionController extends Controller
 
     public function __construct(Execution $ExecutionInstance)
     {
+        $this->middleware('auth');
         $this->execution = $ExecutionInstance;
     }
 
@@ -24,6 +26,46 @@ class ExecutionController extends Controller
     {
         $inputs = $request->all();
         $this->execution->fill($inputs)->save();
+        return back();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($executionId)
+    {
+        $execution = $this->execution->find($executionId);
+        return view('/execution/edit', compact('execution'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $executionId)
+    {
+        $inputs = $request->all();
+        $this->execution->find($executionId)->fill($inputs)->save();
+        $habit = Execution::find($executionId)->habit;
+        $executions = $this->execution->find($executionId);
+        return redirect()->route('habit.show', compact('habit', 'executions'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($executionId)
+    {
+        $this->execution->find($executionId)->delete();
         return back();
     }
 }
