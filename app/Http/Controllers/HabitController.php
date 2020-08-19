@@ -88,7 +88,6 @@ class HabitController extends Controller
         $inputs = $request->all();
         $this->habit->find($habitId)->fill($inputs)->save();
         return redirect()->route('habit.index');
-
     }
 
     /**
