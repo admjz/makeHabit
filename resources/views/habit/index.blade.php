@@ -8,12 +8,21 @@
   <a href="{{ route('habit.show', $habit->id) }}">
     <table>
         <tr>
-          <th>登録日</th>
-          <td>{{ $habit->created_at->format('Y/m/d') }}</td>
+          <th>開始日</th>
+          <td>{{ $habit->created_at->format('Y/n/d') }}</td>
         </tr>
         <tr>
-          <th>Title</th>
+          <th>タイトル</th>
           <td>{{ $habit->title }}</td>
+        </tr>
+        <tr>
+          <th>最新の実施日</th>
+          <td>
+              {{ $executions->where('habit_id', "{$habit->id}")
+                            ->pluck('created_at')
+                            ->last()
+                            ->format('Y/m/d') }}
+          </td>
         </tr>
     </table>
   </a>
