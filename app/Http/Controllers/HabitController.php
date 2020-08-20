@@ -24,7 +24,7 @@ class HabitController extends Controller
      */
     public function index()
     {
-        $habits = $this->habit->all();
+        $habits = $this->habit->where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         $executions = Execution::get();
         return view('habit.index', compact('habits', 'executions'));
     }
