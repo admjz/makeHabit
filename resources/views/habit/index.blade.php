@@ -9,7 +9,7 @@
     <table>
         <tr>
           <th>開始日</th>
-          <td>{{ $habit->created_at->format('Y/n/d') }}</td>
+          <td>{{ $habit->created_at->format('Y/m/d') }}</td>
         </tr>
         <tr>
           <th>タイトル</th>
@@ -18,19 +18,30 @@
         <tr>
           <th>最新の実施日</th>
           <td>
-              {{ $executions->where('habit_id', "{$habit->id}")
-                            ->pluck('created_at')
-                            ->last()
-                            ->format('Y/m/d') }}
+              <?php $execution = $executions->where('habit_id', "{$habit->id}")
+                                            ->pluck('created_at')
+                                            ->last()
+              ?>
+              @if (isset($execution))
+                {{ $executions->where('habit_id', "{$habit->id}")
+                              ->pluck('created_at')
+                              ->last()
+                              ->format('Y/m/d') }}
+              @else
+                まだありません
+              @endif
           </td>
         </tr>
         <tr>
           <th></th>
-          <td>{{ $executions->where('habit_id', "{$habit->id}")
-                            ->pluck('created_at')
-                            ->last()
-                            ->diff(date("m/d H:i"))
-                            ->format('%d日%h時間%i分' . '経過') }}
+          <td>
+              @if (isset($execution))
+                {{ $executions->where('habit_id', "{$habit->id}")
+                              ->pluck('created_at')
+                              ->last()
+                              ->diff(date("m/d H:i"))
+                              ->format('%d日%h時間%i分' . '経過') }}
+              @endif
           </td>
         </tr>
     </table>
