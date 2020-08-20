@@ -24,6 +24,15 @@
                             ->format('Y/m/d') }}
           </td>
         </tr>
+        <tr>
+          <th></th>
+          <td>{{ $executions->where('habit_id', "{$habit->id}")
+                            ->pluck('created_at')
+                            ->last()
+                            ->diff(date("H:i"))
+                            ->format('%h時間%i分' . '経過') }}
+          </td>
+        </tr>
     </table>
   </a>
   <div>
