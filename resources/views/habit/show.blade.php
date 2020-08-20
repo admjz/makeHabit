@@ -3,13 +3,22 @@
 
 <table>
   <tr>
-    <th>登録日</th>
+    <th>開始日</th>
     <td>{{ $habit->created_at->format('Y/m/d') }}</td>
   </tr>
   <tr>
     <th>タイトル</th>
     <td>{{ $habit->title }}</td>
   </tr>
+</table>
+<div>
+  {!! Form::open(['route' => 'execution.store']) !!}
+    {!! Form::hidden('habit_id', $habit->id) !!}
+    {!! Form::text('contents', '', ['placeholder' => 'やった内容を記入できます']) !!}
+    {!! Form::submit('実施しました！') !!}
+  {!! Form::close() !!}
+</div>
+<table>
   @foreach($executions as $execution)
     <tr>
       <th>実施日</th>
@@ -35,12 +44,5 @@
     </tr>
   @endforeach
 </table>
-<div>
-  {!! Form::open(['route' => 'execution.store']) !!}
-    {!! Form::hidden('habit_id', $habit->id) !!}
-    {!! Form::text('contents', '', ['placeholder' => 'やった内容を記入できます']) !!}
-    {!! Form::submit('実施しました！') !!}
-  {!! Form::close() !!}
-</div>
 
 @endsection
