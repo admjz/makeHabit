@@ -52,7 +52,7 @@ class ExecutionController extends Controller
     {
         $inputs = $request->all();
         $this->execution->updateExecution($executionId, $inputs);
-        $habit = Execution::find($executionId)->habit;
+        $habit = $this->execution->findHabit($executionId);
         $executions = $this->execution->findExecution($executionId);
         return redirect()->route('habit.show', compact('habit', 'executions'));
     }

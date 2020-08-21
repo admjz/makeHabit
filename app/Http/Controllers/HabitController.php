@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Habit;
-use App\Models\Execution;
 use App\Http\Requests\CreateHabitRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +25,7 @@ class HabitController extends Controller
     public function index()
     {
         $habits = $this->habit->getHabits(Auth::id());
-        $executions = Execution::get();
+        $executions = $this->habit->getExecutions();
         return view('habit.index', compact('habits', 'executions'));
     }
 
@@ -63,7 +62,7 @@ class HabitController extends Controller
     public function show($habitId)
     {
         $habit = $this->habit->findHabit($habitId);
-        $executions = Habit::find($habitId)->executions->sortByDesc('created_at');
+        $executions = $this->habit->findExecution($habitId);
         return view('/habit/show', compact('habit', 'executions'));
     }
 
