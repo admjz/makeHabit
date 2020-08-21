@@ -20,4 +20,23 @@ class Execution extends Model
         'habit_id',
         'contents',
     ];
-}
+
+    public function saveExecution($inputs)
+    {
+        return $this->fill($inputs)->save();
+    }
+
+    public function findExecution($executionId)
+    {
+        return $this->find($executionId);
+    }
+
+    public function updateExecution($executionId, $inputs)
+    {
+        return $this->find($executionId)->fill($inputs)->save();
+    }
+
+    public function deleteExecution($executionId)
+    {
+        return $this->find($executionId)->delete();
+    }

@@ -25,7 +25,7 @@ class ExecutionController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->all();
-        $this->execution->fill($inputs)->save();
+        $this->execution->saveExecution($inputs);
         return back();
     }
 
@@ -37,7 +37,7 @@ class ExecutionController extends Controller
      */
     public function edit($executionId)
     {
-        $execution = $this->execution->find($executionId);
+        $execution = $this->execution->findExecution($executionId);
         return view('/execution/edit', compact('execution'));
     }
 
@@ -51,9 +51,9 @@ class ExecutionController extends Controller
     public function update(Request $request, $executionId)
     {
         $inputs = $request->all();
-        $this->execution->find($executionId)->fill($inputs)->save();
+        $this->execution->updateExecution($executionId, $inputs);
         $habit = Execution::find($executionId)->habit;
-        $executions = $this->execution->find($executionId);
+        $executions = $this->execution->findExecution($executionId);
         return redirect()->route('habit.show', compact('habit', 'executions'));
     }
 
@@ -65,7 +65,7 @@ class ExecutionController extends Controller
      */
     public function destroy($executionId)
     {
-        $this->execution->find($executionId)->delete();
+        $this->execution->deleteExecution($executionId);
         return back();
     }
 }
