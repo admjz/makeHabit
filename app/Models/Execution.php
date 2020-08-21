@@ -11,15 +11,20 @@ class Execution extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $fillable = [
+        'habit_id',
+        'contents',
+    ];
+
     public function habit()
     {
         return $this->belongsTo('App\Models\Habit');
     }
 
-    protected $fillable = [
-        'habit_id',
-        'contents',
-    ];
+    public function getExecution()
+    {
+        return $this->get();
+    }
 
     public function saveExecution($inputs)
     {
@@ -40,3 +45,4 @@ class Execution extends Model
     {
         return $this->find($executionId)->delete();
     }
+}
