@@ -5,7 +5,9 @@
 {!! Form::open(['route' => ['habit.update', $habit->id], 'method' => 'PUT']) !!}
   <div>
     {!! Form::text('title', $habit->title) !!}
-    <span></span>
+    @if ($errors->has('title'))
+      <span>{{ $errors->first('title') }}</span>
+    @endif
   </div>
   <div>
     {!! Form::submit('更新する') !!}

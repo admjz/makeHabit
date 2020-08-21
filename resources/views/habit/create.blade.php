@@ -5,7 +5,9 @@
 {!! Form::open(['route' => 'habit.store']) !!}
   <div>
     {!! Form::text('title', '', ['placeholder' => '習慣にしたいことを入力してください']) !!}
-    <span></span>
+    @if ($errors->has('title'))
+      <span>{{ $errors->first('title') }}</span>
+    @endif
   </div>
   <div>
     {!! Form::submit('追加') !!}
