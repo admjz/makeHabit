@@ -11,13 +11,38 @@ class Habit extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $fillable = [
+        'user_id',
+        'title',
+    ];
+
     public function executions()
     {
         return $this->hasMany('App\Models\Execution');
     }
 
-    protected $fillable = [
-        'user_id',
-        'title',
-    ];
+    public function getHabits($currentUserId)
+    {
+        return $this->where('user_id', $currentUserId)->orderBy('created_at', 'desc')->get();
+    }
+
+    public function saveHabit($inputs)
+    {
+        return $this->fill($inputs)->save();
+    }
+
+    public function findHabit($habitId)
+    {
+        return $this->find($habitId);
+    }
+
+    public function updateHabit($habitId, $inputs)
+    {
+        return $this->find($habitId)->fill($inputs)->save();
+    }
+
+    public function deleteHabit($habitId)
+    {
+        return $this->find($habitId)->delete();
+    }
 }

@@ -25,7 +25,7 @@ class HabitController extends Controller
      */
     public function index()
     {
-        $habits = $this->habit->where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
+        $habits = $this->habit->getHabits(Auth::id());
         $executions = Execution::get();
         return view('habit.index', compact('habits', 'executions'));
     }
@@ -50,7 +50,7 @@ class HabitController extends Controller
     {
         $inputs = $request->all();
         $inputs['user_id'] = Auth::id();
-        $this->habit->fill($inputs)->save();
+        $this->habit->saveHabit($inputs);
         return redirect()->route('habit.index');
     }
 
@@ -62,7 +62,7 @@ class HabitController extends Controller
      */
     public function show($habitId)
     {
-        $habit = $this->habit->find($habitId);
+        $habit = $this->habit->findHabit($habitId);
         $executions = Habit::find($habitId)->executions->sortByDesc('created_at');
         return view('/habit/show', compact('habit', 'executions'));
     }
@@ -75,7 +75,7 @@ class HabitController extends Controller
      */
     public function edit($habitId)
     {
-        $habit = $this->habit->find($habitId);
+        $habit = $this->habit->findHabit($habitId);
         return view('/habit/edit', compact('habit'));
     }
 
@@ -89,7 +89,7 @@ class HabitController extends Controller
     public function update(CreateHabitRequest $request, $habitId)
     {
         $inputs = $request->all();
-        $this->habit->find($habitId)->fill($inputs)->save();
+        $this->habit->updateHabit($habitId, $inputs);
         return redirect()->route('habit.index');
     }
 
@@ -101,7 +101,7 @@ class HabitController extends Controller
      */
     public function destroy($habitId)
     {
-        $this->habit->find($habitId)->delete();
+        $this->habit->deleteHabit($habitId);
         return redirect()->route('habit.index');
     }
 }
