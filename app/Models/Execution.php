@@ -45,4 +45,9 @@ class Execution extends Model
     {
         return $this->find($executionId)->delete();
     }
+
+    public function findHabit($executionId)
+    {
+        return $this->find($executionId)->habit;
+    }
 }
