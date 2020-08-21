@@ -46,11 +46,6 @@ class Habit extends Model
         return $this->find($habitId)->delete();
     }
 
-    public function getExecutions()
-    {
-        return $this->executions()->get();
-    }
-
     public function findExecution($habitId)
     {
         return $this->find($habitId)->executions->sortByDesc('created_at');

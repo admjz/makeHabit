@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Habit;
 use App\Http\Requests\CreateHabitRequest;
+use App\Models\Habit;
+use App\Models\Execution;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,7 @@ class HabitController extends Controller
     public function index()
     {
         $habits = $this->habit->getHabits(Auth::id());
-        $executions = $this->habit->getExecutions();
+        $executions = Execution::get();
         return view('habit.index', compact('habits', 'executions'));
     }
 
