@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Habit;
 use App\Models\Execution;
+use App\Http\Requests\CreateHabitRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,10 +43,10 @@ class HabitController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CreateHabitRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateHabitRequest $request)
     {
         $inputs = $request->all();
         $inputs['user_id'] = Auth::id();
@@ -81,11 +82,11 @@ class HabitController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CreateHabitRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $habitId)
+    public function update(CreateHabitRequest $request, $habitId)
     {
         $inputs = $request->all();
         $this->habit->find($habitId)->fill($inputs)->save();
