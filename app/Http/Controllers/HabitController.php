@@ -63,7 +63,7 @@ class HabitController extends Controller
     public function show($habitId)
     {
         $habit = $this->habit->findHabit($habitId);
-        $executions = $this->habit->findExecution($habitId);
+        $executions = $this->habit->getExecutions($habitId);
         return view('/habit/show', compact('habit', 'executions'));
     }
 
