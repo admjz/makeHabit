@@ -20,13 +20,10 @@
           <td>
               <?php $execution = $executions->where('habit_id', "{$habit->id}")
                                             ->pluck('created_at')
-                                            ->last()
+                                            ->last();
               ?>
               @if (isset($execution))
-                {{ $executions->where('habit_id', "{$habit->id}")
-                              ->pluck('created_at')
-                              ->last()
-                              ->format('Y/m/d') }}
+                {{ $execution->format('Y/m/d') }}
               @else
                 まだありません
               @endif
@@ -36,11 +33,7 @@
           <th></th>
           <td>
               @if (isset($execution))
-                {{ $executions->where('habit_id', "{$habit->id}")
-                              ->pluck('created_at')
-                              ->last()
-                              ->diff(date("m/d H:i"))
-                              ->format('%d日%h時間%i分' . '経過') }}
+                {{ $execution->diff(date("m/d H:i"))->format('%d日%h時間%i分  経過') }}
               @endif
           </td>
         </tr>
