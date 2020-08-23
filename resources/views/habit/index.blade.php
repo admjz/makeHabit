@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-  <a href="{{ route('habit.create') }}">習慣にしたいことを新規作成する</a>
+  <a href="{{ route('habit.create') }}"><i class="fas fa-plus-square fa-2x"></i></a>
 </div>
 @foreach ($habits as $habit)
   <a href="{{ route('habit.show', $habit->id) }}">
@@ -40,11 +40,11 @@
     </table>
   </a>
   <div>
-    <a href="{{ route('habit.edit', $habit->id) }}">タイトルを編集する</a>
+    <a href="{{ route('habit.edit', $habit->id) }}"><i class="fas fa-edit fa-2x fa-fw"></i></a>
   </div>
   <div>
     {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-      {!! Form::button('この習慣を削除する', ['type' => 'submit'])!!}
+      {!! Form::button('<i class="fas fa-trash-alt fa-2x fa-fw"></i>', ['type' => 'submit'])!!}
     {!! Form::close()!!}
   </div>
 @endforeach
