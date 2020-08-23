@@ -4,3 +4,49 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 18px;
 }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #01bfbd;
+  cursor: pointer;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.nav-item:hover > .dropdown-menu {
+  overflow: visible;
+  opacity: 1;
+}
+
+.wrapper-navbar {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 120px;
+  width: 120px;
+}
+
+.fa-trash-alt {
+  color: #c81c14;
+}
