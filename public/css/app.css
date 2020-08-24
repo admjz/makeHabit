@@ -3,10 +3,12 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 18px;
+  background-color: #fffaf0;
 }
 
 a {
   display: inline-block;
+  color: #696969;
   text-decoration: none;
 }
 
@@ -32,8 +34,13 @@ a:hover {
 }
 
 .wrapper-navbar {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.navbar {
   width: 80%;
   margin: 0 auto;
+  padding: 10px;
 }
 
 .container {
@@ -47,6 +54,70 @@ a:hover {
   width: 120px;
 }
 
+.create-habit,
+.habit-wrapper {
+  margin-top: 20px;
+}
+
+.create-habit {
+  width: 80%;
+  margin: 0 auto;
+  text-align: right;
+  padding: 20px;
+}
+
+.habit-wrapper {
+  padding: 0px 50px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+}
+
+.habit-box {
+  width: 300px;
+  margin-left: 120px;
+  padding: 20px;
+  border: 6px solid #3cb371;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  box-shadow:5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.habit-box:nth-child(3n+1) {
+  margin-left: 0px;
+}
+
+.habit-box:nth-child(n+4) {
+  margin-top: 30px;
+}
+
+.habit-show {
+  width: 100%;
+}
+
+.habit-table {
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+
+.habit-table tr:nth-child(-n+3) {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.habit-table td {
+  text-align: center;
+}
+
+.fa-edit {
+  color: #c81c14;
+}
+
 .fa-trash-alt {
   color: #c81c14;
+}
+
+.pagination {
+  display: inline;
+  text-align: center;
 }
