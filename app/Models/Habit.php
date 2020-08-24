@@ -16,6 +16,8 @@ class Habit extends Model
         'title',
     ];
 
+    protected $perPage = 6;
+
     public function executions()
     {
         return $this->hasMany('App\Models\Execution');
@@ -23,7 +25,7 @@ class Habit extends Model
 
     public function getHabits($currentUserId)
     {
-        return $this->where('user_id', $currentUserId)->orderBy('created_at', 'desc')->get();
+        return $this->where('user_id', $currentUserId)->orderBy('created_at')->paginate();
     }
 
     public function saveHabit($inputs)
