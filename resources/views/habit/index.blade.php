@@ -1,14 +1,14 @@
 @extends('layouts/app')
 @section('content')
 
-<div class="habit-containor">
+<div class="habit-container">
   <div class="create-habit">
     <a href="{{ route('habit.create') }}"><i class="fas fa-plus-square fa-3x"></i></a>
   </div>
   <div class="habit-wrapper">
     @foreach ($habits as $habit)
       <div class="habit-box">
-        <div class="habit-show">
+        <div class="habit-box_show">
           <a href="{{ route('habit.show', $habit->id) }}">
             <table class="habit-table">
               <tr>
@@ -38,13 +38,13 @@
               </tr>
             </table>
           </a>
-      </div>
-        <div class="habit-edit_form">
+        </div>
+        <div class="habit-box_edit-form">
           <a href="{{ route('habit.edit', $habit->id) }}"><i class="fas fa-edit fa-2x"></i></a>
         </div>
-        <div class="habit-delete_form">
-          {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE', 'class' => 'habit-delete'])!!}
-            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'habit-delete_btn'])!!}
+        <div class="habit-box_delete-form">
+          {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
+            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'habit-delete-btn'])!!}
           {!! Form::close()!!}
         </div>
       </div>
