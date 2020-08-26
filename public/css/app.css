@@ -47,6 +47,16 @@ button:hover {
   background-color: #eeeeee;
 }
 
+.btn-add {
+  width: 30%;
+  line-height: 3;
+}
+
+.btn-add:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
 .margin-top {
   margin-top: 50px;
 }
@@ -256,7 +266,7 @@ button:hover {
 }
 
 .input-area {
-  width: 30%;
+  width: 20%;
   line-height: 3;
   background-color: #fff;
   border: 1px solid #808080;
