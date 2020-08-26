@@ -50,20 +50,40 @@ button:hover {
 .btn-add {
   width: 30%;
   line-height: 3;
-}
-
-.btn-add:hover {
   color: #fff;
   background-color: #6495ed;
 }
 
-.margin-top {
+.btn-add:hover {
+  font-weight: bold;
+  color: #6495ed;
+
+}
+
+.input-area {
+  width: 20%;
+  line-height: 2;
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.margin-top30 {
+  margin-top: 30px;
+}
+
+.margin-top50 {
   margin-top: 50px;
 }
 
 .habit-container {
   padding: 50px;
   text-align: center;
+}
+
+.container_title {
+  font-size: 25px;
 }
 
 .error-message {
@@ -125,6 +145,7 @@ button:hover {
 
 .habit-wrapper {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -146,7 +167,7 @@ button:hover {
   margin-top: 30px;
 }
 
-.habit-box_show {
+.habit-box_inner {
   width: 100%;
 }
 
@@ -161,19 +182,28 @@ button:hover {
   font-weight: bold;
 }
 
+.edit-form > a:hover {
+  color: #000080;
+}
+
 .fa-edit {
   margin: 5px 0 5px 8px;
 }
 
-.habit-box_delete-form {
+.delete-form {
   margin-top: 10px;
 }
 
-.habit-delete-btn {
+.delete-btn {
   padding: 0;
 }
 
-.habit-delete-btn:hover .fa-trash-alt {
+.btn:hover .fa-edit {
+  color: #000080;
+  transition: 0.5s;
+}
+
+.btn:hover .fa-trash-alt {
   color: #c81c14;
 }
 
@@ -182,11 +212,6 @@ button:hover {
   font-size: 2.5em;
   color: #696969;
   transition: 0.5s;
-}
-
-.pager {
-  padding: 0 40px 22px 0;
-  text-align: center;
 }
 
 .pagination {
@@ -259,24 +284,43 @@ button:hover {
   cursor: default;
 }
 
-/* [Habit]create.blade */
+/* [Habit]show.blade */
 
-.create-habit_title {
+.execution-box {
+  width: 30%;
+  position: relative;
+  margin: 120px auto;
+  padding: 0.5em 1em;
+  border: solid 3px #3cb371;
+  border-radius: 0 10px 10px;
+}
+
+.execution-date {
+  position: absolute;
+  display: inline-block;
+  top: -40px;
+  left: -3px;
+  padding: 0 9px;
+  height: 37px;
+  line-height: 35px;
+  background: #3cb371;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.execution-contents {
   font-size: 25px;
 }
 
-.input-area {
-  width: 20%;
-  line-height: 3;
-  background-color: #fff;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  transition: 0.5s;
+.execution-box_inner {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 20px;
 }
 
-
-/* [Habit]show.blade */
-
+.edit-execution {
+  font-size: 1.5em;
+}
 
 /* [Habit]edit.blade */
 
