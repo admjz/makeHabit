@@ -5,16 +5,15 @@
   <div class="create-habit">
     <a href="{{ route('habit.create') }}"><i class="fas fa-plus-square fa-3x"></i></a>
   </div>
-  <div class="habit-wrapper margin-top">
+  <div class="habit-wrapper margin-top50">
     @foreach ($habits as $habit)
       <div class="habit-box">
-        <div class="habit-box_show">
+        <div class="habit-box_inner">
           <a href="{{ route('habit.show', $habit->id) }}">
             <table class="habit-table">
               <tr>
                 <td colspan="2">{{ $habit->title }}</td>
               </tr>
-              <tr></tr>
               <tr>
                 <?php $execution = $executions->where('habit_id', "{$habit->id}")
                                                   ->pluck('created_at')
@@ -28,6 +27,7 @@
                     @endif
                 </td>
               </tr>
+              <tr></tr>
               <tr>
                 <th>最新の実施日</th>
                 <td>
@@ -41,18 +41,18 @@
             </table>
           </a>
         </div>
-        <div class="btn habit-box_edit-form">
+        <div class="btn edit-form">
           <a href="{{ route('habit.edit', $habit->id) }}"><i class="fas fa-edit fa-2x"></i></a>
         </div>
-        <div class="habit-box_delete-form">
+        <div class="delete-form">
           {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn habit-delete-btn'])!!}
+            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn delete-btn'])!!}
           {!! Form::close()!!}
         </div>
       </div>
     @endforeach
   </div>
-  <div class="pager margin-top">
+  <div class="pager margin-top50">
     {{ $habits->appends(request()->all())->links() }}
   </div>
 </div>
