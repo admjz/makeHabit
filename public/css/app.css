@@ -33,8 +33,6 @@ button:hover {
   transition: 0.5s;
 }
 
-/* indexページ */
-
 .nav-item {
   position: relative;
 }
@@ -71,6 +69,8 @@ button:hover {
   height: 120px;
   width: 120px;
 }
+
+/* indexページ */
 
 .create-habit,
 .habit-wrapper {
@@ -113,7 +113,7 @@ button:hover {
   margin-top: 30px;
 }
 
-.habit-show {
+.habit-box_show {
   width: 100%;
 }
 
@@ -128,8 +128,8 @@ button:hover {
   font-weight: bold;
 }
 
-.habit-edit_form,
-.habit-delete_form {
+.habit-box_edit-form,
+.habit-box_delete-form {
   width: 80%;
   margin: 0 auto;
   background-color: #fff;
@@ -138,9 +138,9 @@ button:hover {
   transition: 0.5s;
 }
 
-.habit-edit_form:hover,
-.habit-delete_form:hover,
-.habit-delete_btn:hover {
+.habit-box_edit-form:hover,
+.habit-box_delete-form:hover,
+.habit-delete-btn:hover {
   background-color: #eeeeee;
 }
 
@@ -148,16 +148,16 @@ button:hover {
   margin: 5px 0 5px 8px;
 }
 
-.habit-delete_form {
+.habit-box_delete-form {
   margin-top: 10px;
 }
 
-.habit-delete_btn {
+.habit-delete-btn {
   width: 100%;
   padding: 0;
 }
 
-.habit-delete_btn:hover .fa-trash-alt {
+.habit-delete-btn:hover .fa-trash-alt {
   color: #c81c14;
 }
 
