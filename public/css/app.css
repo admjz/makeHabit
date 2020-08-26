@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP);
 
+/* 共通 */
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 18px;
@@ -7,15 +9,31 @@ body {
 }
 
 a {
-  display: inline-block;
+  display: block;
   color: #696969;
   text-decoration: none;
+  transition: 0.5s;
 }
 
 a:hover {
   color: #01bfbd;
   cursor: pointer;
+  transition: 0.5s;
 }
+
+button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #01bfbd;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* indexページ */
 
 .nav-item {
   position: relative;
@@ -66,6 +84,10 @@ a:hover {
   padding: 20px;
 }
 
+.create-habit > a {
+  display:inline-block;
+}
+
 .habit-wrapper {
   padding: 0px 50px 50px;
   display: flex;
@@ -96,25 +118,54 @@ a:hover {
 }
 
 .habit-table {
+  margin: 0 auto;
   border-collapse: separate;
   border-spacing: 20px;
 }
 
 .habit-table tr:nth-child(-n+3) {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
 }
 
-.habit-table td {
-  text-align: center;
+.habit-edit_form,
+.habit-delete_form {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.habit-edit_form:hover,
+.habit-delete_form:hover,
+.habit-delete_btn:hover {
+  background-color: #eeeeee;
 }
 
 .fa-edit {
+  margin: 5px 0 5px 8px;
+}
+
+.habit-delete_form {
+  margin-top: 10px;
+}
+
+.habit-delete_btn {
+  width: 100%;
+  padding: 0;
+}
+
+.habit-delete_btn:hover .fa-trash-alt {
   color: #c81c14;
 }
 
 .fa-trash-alt {
-  color: #c81c14;
+  margin: 5px;
+  font-size: 2.5em;
+  color: #696969;
+  transition: 0.5s;
 }
 
 .pager {
@@ -191,3 +242,5 @@ a:hover {
   border-color: #ddd;
   cursor: default;
 }
+
+/* habitCreate */
