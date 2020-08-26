@@ -39,12 +39,12 @@
             </table>
           </a>
       </div>
-        <div>
-          <a href="{{ route('habit.edit', $habit->id) }}"><i class="fas fa-edit fa-2x fa-fw"></i></a>
+        <div class="habit-edit_form">
+          <a href="{{ route('habit.edit', $habit->id) }}"><i class="fas fa-edit fa-2x"></i></a>
         </div>
-        <div>
-          {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-            {!! Form::button('<i class="fas fa-trash-alt fa-2x fa-fw"></i>', ['type' => 'submit'])!!}
+        <div class="habit-delete_form">
+          {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE', 'class' => 'habit-delete'])!!}
+            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'habit-delete_btn'])!!}
           {!! Form::close()!!}
         </div>
       </div>
