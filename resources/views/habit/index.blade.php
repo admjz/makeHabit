@@ -5,7 +5,7 @@
   <div class="create-habit">
     <a href="{{ route('habit.create') }}"><i class="fas fa-plus-square fa-3x"></i></a>
   </div>
-  <div class="habit-wrapper">
+  <div class="habit-wrapper margin-top">
     @foreach ($habits as $habit)
       <div class="habit-box">
         <div class="habit-box_show">
@@ -23,6 +23,8 @@
                 <td colspan="2">
                     @if (isset($execution))
                       {{ $execution->diff(date("m/d H:i"))->format('%d日と%h時間  経過') }}
+                    @else
+                      &nbsp;
                     @endif
                 </td>
               </tr>
@@ -39,18 +41,18 @@
             </table>
           </a>
         </div>
-        <div class="habit-box_edit-form">
+        <div class="btn habit-box_edit-form">
           <a href="{{ route('habit.edit', $habit->id) }}"><i class="fas fa-edit fa-2x"></i></a>
         </div>
         <div class="habit-box_delete-form">
           {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'habit-delete-btn'])!!}
+            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn habit-delete-btn'])!!}
           {!! Form::close()!!}
         </div>
       </div>
     @endforeach
   </div>
-  <div class="pager">
+  <div class="pager margin-top">
     {{ $habits->appends(request()->all())->links() }}
   </div>
 </div>
