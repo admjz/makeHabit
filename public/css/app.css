@@ -6,6 +6,7 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 18px;
   background-color: #fffaf0;
+  color: #696969;
 }
 
 a {
@@ -33,6 +34,36 @@ button:hover {
   transition: 0.5s;
 }
 
+.btn {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #eeeeee;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.habit-container {
+  padding: 50px;
+  text-align: center;
+}
+
+.error-message {
+  display: block;
+  margin-top: 20px;
+  color: #c81c14;
+}
+
+/* app.blade */
+
 .nav-item {
   position: relative;
 }
@@ -59,7 +90,7 @@ button:hover {
   padding: 10px;
 }
 
-.container {
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,18 +101,12 @@ button:hover {
   width: 120px;
 }
 
-/* indexページ */
-
-.create-habit,
-.habit-wrapper {
-  margin-top: 20px;
-}
+/* index.blade */
 
 .create-habit {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   text-align: right;
-  padding: 20px;
 }
 
 .create-habit > a {
@@ -89,10 +114,8 @@ button:hover {
 }
 
 .habit-wrapper {
-  padding: 0px 50px 50px;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
 }
 
 .habit-box {
@@ -128,22 +151,6 @@ button:hover {
   font-weight: bold;
 }
 
-.habit-box_edit-form,
-.habit-box_delete-form {
-  width: 80%;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  transition: 0.5s;
-}
-
-.habit-box_edit-form:hover,
-.habit-box_delete-form:hover,
-.habit-delete-btn:hover {
-  background-color: #eeeeee;
-}
-
 .fa-edit {
   margin: 5px 0 5px 8px;
 }
@@ -153,7 +160,6 @@ button:hover {
 }
 
 .habit-delete-btn {
-  width: 100%;
   padding: 0;
 }
 
@@ -169,7 +175,7 @@ button:hover {
 }
 
 .pager {
-  padding: 22px 40px 22px 0;
+  padding: 0 40px 22px 0;
   text-align: center;
 }
 
@@ -243,4 +249,26 @@ button:hover {
   cursor: default;
 }
 
-/* habitCreate */
+/* [Habit]create.blade */
+
+.create-habit_title {
+  font-size: 25px;
+}
+
+.input-area {
+  width: 30%;
+  line-height: 3;
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+
+/* [Habit]show.blade */
+
+
+/* [Habit]edit.blade */
+
+
+/* [Execution]edit.blade */
