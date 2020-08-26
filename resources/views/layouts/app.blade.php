@@ -25,7 +25,7 @@
     <div class="app">
         <div class="wrapper-navbar">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                <div class="container">
+                <div class="header-container">
                     <a class="navbar-brand" href="{{ route('habit.index') }}">
                         <img class="logo" src="{{ asset('image/logo.png') }}" alt="makeHabit">
                     </a>
