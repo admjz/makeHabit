@@ -49,7 +49,7 @@ class ExecutionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $executionId)
+    public function update(CreateExecutionRequest $request, $executionId)
     {
         $inputs = $request->all();
         $this->execution->updateExecution($executionId, $inputs);
