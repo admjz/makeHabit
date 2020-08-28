@@ -7,13 +7,13 @@
     {!! Form::open(['route' => 'execution.store']) !!}
       {!! Form::hidden('habit_id', $habit->id) !!}
       <div>
-        {!! Form::text('contents', '', ['class' => 'input-area', 'placeholder' => '例)腹筋50回、腕立て伏せ50回']) !!}
+        {!! Form::textarea('contents', '', ['class' => 'input-area', 'placeholder' => '例)腹筋50回、腕立て伏せ50回 &#13;&#10;&#13;&#10;※何も記入しなくても記録できます', 'rows' => 5]) !!}
         @if ($errors->has('contents'))
           <span class="error-message">{{ $errors->first('contents') }}</span>
         @endif
       </div>
       <div class="margin-top30">
-        {!! Form::button('実施しました！', ['type' => 'submit', 'class' => 'btn btn-add']) !!}
+        {!! Form::button('記録する！', ['type' => 'submit', 'class' => 'btn btn-add']) !!}
       </div>
     {!! Form::close() !!}
   </div>

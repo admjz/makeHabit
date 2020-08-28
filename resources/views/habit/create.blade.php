@@ -12,7 +12,7 @@
         @endif
       </div>
       <div class="margin-top50">
-        {!! Form::button('追加', ['type' => 'submit', 'class' => 'btn btn-add']) !!}
+        {!! Form::button('登録する！', ['type' => 'submit', 'class' => 'btn btn-add']) !!}
       </div>
     {!! Form::close() !!}
   </div>
