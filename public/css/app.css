@@ -289,10 +289,21 @@ button:hover {
 .execution-box {
   width: 30%;
   position: relative;
-  margin: 120px auto;
-  padding: 0.5em 1em;
+  margin: 120px auto 0;
+  padding: 0 1em 1.5em;
   border: solid 3px #3cb371;
   border-radius: 0 10px 10px;
+}
+
+.execution-box:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 125px;
+  position: absolute;
+  bottom: -125px;
+  left: 49%;
+  background-color: #3cb371;
 }
 
 .execution-date {
