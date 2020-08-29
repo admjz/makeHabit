@@ -16,8 +16,8 @@
               </tr>
               <tr>
                 <?php $execution = $executions->where('habit_id', "{$habit->id}")
-                                                  ->pluck('created_at')
-                                                  ->last();
+                                              ->pluck('created_at')
+                                              ->last();
                     ?>
                 <td colspan="2">
                     @if (isset($execution))
