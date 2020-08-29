@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateHabitRequest;
 use App\Models\Habit;
 use App\Models\Execution;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,7 +65,18 @@ class HabitController extends Controller
     {
         $habit = $this->habit->findHabit($habitId);
         $executions = $this->habit->getExecutions($habitId);
-        return view('/habit/show', compact('habit', 'executions'));
+        $today = Carbon::today();
+        $execDate = $executions->pluck('created_at')->first();
+        $compareDate = $today->isSameday(Carbon::parse($execDate));
+        // dd($execDate, $a);
+        if (is_null($execDate)) {
+            $execDate = '';
+            return view('/habit/show', compact('habit', 'executions', 'execDate'));
+        } elseif ($compareDate) {
+            return view('/habit/show', compact('habit', 'executions'));
+        } else {
+            return view('/habit/show', compact('habit', 'executions', 'execDate'));
+        }
     }
 
     /**
