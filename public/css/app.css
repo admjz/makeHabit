@@ -48,7 +48,7 @@ button:hover {
 }
 
 .btn-add {
-  width: 10%;
+  width: 130px;
   line-height: 3;
   color: #fff;
   background-color: #6495ed;
@@ -57,7 +57,6 @@ button:hover {
 .btn-add:hover {
   font-weight: bold;
   color: #6495ed;
-
 }
 
 .input-area {
@@ -67,6 +66,7 @@ button:hover {
   border: 1px solid #808080;
   border-radius: 4px;
   transition: 0.5s;
+  outline-color: #0000ff;
 }
 
 .margin-top30 {
@@ -131,7 +131,7 @@ button:hover {
   width: 120px;
 }
 
-/* index.blade */
+/* blade */
 
 .create-habit {
   width: 85%;
@@ -231,7 +231,7 @@ button:hover {
   padding: 6px 12px;
   line-height: 1.6;
   text-decoration: none;
-  color: #3097D1;
+  color: #6495ed;
   background-color: #fff;
   border: 1px solid #ddd;
 }
@@ -267,8 +267,8 @@ button:hover {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #3097D1;
-  border-color: #3097D1;
+  background-color: #6495ed;
+  border-color: #6495ed;
   cursor: default;
 }
 
@@ -283,8 +283,6 @@ button:hover {
   border-color: #ddd;
   cursor: default;
 }
-
-/* [Habit]show.blade */
 
 .execution-box {
   width: 30%;
@@ -333,7 +331,77 @@ button:hover {
   font-size: 1.5em;
 }
 
-/* [Habit]edit.blade */
+@media screen and (max-width: 1399px) {
+  .habit-box {
+    width: 30%;
+  }
 
+  .habit-box:nth-child(2n+1) {
+    margin-left: 0px;
+  }
 
-/* [Execution]edit.blade */
+  .habit-box:nth-child(n+3) {
+    margin-top: 30px;
+  }
+
+  .habit-box:nth-child(2n) {
+    margin-left: 120px;
+  }
+
+  .input-area,
+  .execution-box {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  .navbar {
+    width: 90%;
+  }
+
+  .habit-container {
+    padding: 25px;
+  }
+
+  .habit-wrapper {
+    display: inline-block;
+  }
+
+  .create-habit {
+    width: 100%;
+  }
+
+  .habit-box {
+    width: 85%;
+  }
+
+  .habit-box:nth-child(2n) {
+    margin-left: 0px;
+  }
+
+  .habit-box:nth-child(n+1) {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .container_title {
+    font-size: 5vw;
+  }
+
+  .input-area,
+  .execution-box {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .habit-table {
+    font-size: 4vw;
+  }
+
+  .habit-table tr:nth-child(-n+3) {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+}
