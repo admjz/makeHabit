@@ -59,6 +59,17 @@ button:hover {
   color: #6495ed;
 }
 
+.btn-disabled {
+  width :200px;
+  font-weight: bold;
+  color: #6495ed;
+  background-color: #eeeeee;
+}
+
+.btn-disabled:hover {
+  cursor: not-allowed;
+}
+
 .input-area {
   width: 30%;
   line-height: 2;
