@@ -16,7 +16,7 @@
         @if (isset($execDate))
           {!! Form::button('記録する！', ['type' => 'submit', 'class' => 'btn btn-add']) !!}
         @else
-          {!! Form::button('今日の分は記録済みです！', ['disabled', 'type' => 'submit', 'class' => 'btn btn-add btn-disabled']) !!}
+          {!! Form::button('今日の分は記録済みです', ['disabled', 'type' => 'submit', 'class' => 'btn btn-add btn-disabled']) !!}
         @endif
       </div>
     {!! Form::close() !!}
