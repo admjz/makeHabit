@@ -27,7 +27,7 @@ class ExecutionController extends Controller
     {
         $inputs = $request->all();
         $this->execution->saveExecution($inputs);
-        return back();
+        return redirect()->route('habit.show', $inputs['habit_id']);
     }
 
     /**
