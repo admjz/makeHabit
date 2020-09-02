@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HabitsTableSeeder::class,
             ExecutionsTableSeeder::class,
+            UsersTableSeeder::class
         ]);
     }
 }
