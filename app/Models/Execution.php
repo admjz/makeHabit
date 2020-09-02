@@ -16,6 +16,8 @@ class Execution extends Model
         'contents',
     ];
 
+    protected $perPage = 5;
+
     public function habit()
     {
         return $this->belongsTo('App\Models\Habit');
