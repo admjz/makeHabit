@@ -68,7 +68,6 @@ class HabitController extends Controller
         $today = Carbon::today();
         $execDate = $this->habit->findExecutions($habitId);
         $compareDate = $today->isSameday(Carbon::parse($execDate));
-        // dd($execDate, $a);
         if (is_null($execDate)) {
             $execDate = '';
             return view('/habit/show', compact('habit', 'executions', 'execDate'));
