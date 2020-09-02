@@ -48,8 +48,12 @@ class Habit extends Model
         return $this->find($habitId)->delete();
     }
 
-    public function getExecutions($habitId)
+    public function findExecutions($habitId)
     {
-        return $this->find($habitId)->executions->sortByDesc('created_at');
+        return $this->find($habitId)
+                    ->executions
+                    ->sortByDesc('created_at')
+                    ->pluck('created_at')
+                    ->first();
     }
 }

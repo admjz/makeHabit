@@ -64,9 +64,9 @@ class HabitController extends Controller
     public function show($habitId)
     {
         $habit = $this->habit->findHabit($habitId);
-        $executions = $this->habit->getExecutions($habitId);
+        $executions = $habit->executions()->orderBy('created_at', 'desc')->paginate();
         $today = Carbon::today();
-        $execDate = $executions->pluck('created_at')->first();
+        $execDate = $this->habit->findExecutions($habitId);
         $compareDate = $today->isSameday(Carbon::parse($execDate));
         // dd($execDate, $a);
         if (is_null($execDate)) {
