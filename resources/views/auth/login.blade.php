@@ -6,7 +6,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="container_title">{{ __('Login') }}</div>
-
+                {!! Form::open(['route' => 'login']) !!}
+                    {!! Form::hidden('email', 'Banjo@gmai.com') !!}
+                    {!! Form::hidden('password', 'banjobanjo') !!}
+                    {!! Form::button('ゲストログイン', ['class' => 'btn btn-guest margin-top50', 'type' => 'submit']) !!}
+                {!! Form::close() !!}
                 <div class="card-body margin-top50">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
