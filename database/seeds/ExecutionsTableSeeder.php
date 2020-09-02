@@ -17,50 +17,62 @@ class ExecutionsTableSeeder extends Seeder
             [
                 'habit_id' => 1,
                 'contents'   => 'PHP',
-                'created_at' => Carbon::create(2020, 8, 14),
-                'updated_at' => Carbon::create(2020, 8, 14)
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay(3)->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay(3)->toDateString())
+            ],
+            [
+                'habit_id' => 1,
+                'contents'   => 'PHP',
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay(2)->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay(2)->toDateString())
             ],
             [
                 'habit_id' => 1,
                 'contents'   => 'Laravel',
-                'created_at' => Carbon::create(2020, 8, 15),
-                'updated_at' => Carbon::create(2020, 8, 15)
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay()->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay()->toDateString())
+            ],
+            [
+                'habit_id' => 1,
+                'contents'   => 'Laravel',
+                'created_at' => Carbon::create(Carbon::yesterday()->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->toDateString())
             ],
             [
                 'habit_id' => 1,
                 'contents'   => 'Mysql',
-                'created_at' => Carbon::create(2020, 8, 16),
-                'updated_at' => Carbon::create(2020, 8, 16)
+                'created_at' => Carbon::create(Carbon::now()->toTimeString()),
+                'updated_at' => Carbon::create(Carbon::now()->toTimeString())
             ],
             [
                 'habit_id' => 2,
                 'contents'   => '腹筋',
-                'created_at' => Carbon::create(2020, 8, 10),
-                'updated_at' => Carbon::create(2020, 8, 10)
+                'created_at' => Carbon::create(Carbon::yesterday()->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->toDateString())
             ],
             [
                 'habit_id' => 3,
                 'contents'   => '',
-                'created_at' => Carbon::create(2020, 8, 1),
-                'updated_at' => Carbon::create(2020, 8, 1)
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay(10)->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay(10)->toDateString())
             ],
             [
                 'habit_id' => 3,
                 'contents'   => '',
-                'created_at' => Carbon::create(2020, 8, 2),
-                'updated_at' => Carbon::create(2020, 8, 2)
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay(16)->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay(16)->toDateString())
             ],
             [
                 'habit_id' => 3,
                 'contents'   => '',
-                'created_at' => Carbon::create(2020, 8, 3),
-                'updated_at' => Carbon::create(2020, 8, 3)
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay(18)->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay(18)->toDateString())
             ],
             [
                 'habit_id' => 3,
                 'contents'   => '',
-                'created_at' => Carbon::create(2020, 8, 4),
-                'updated_at' => Carbon::create(2020, 8, 4)
+                'created_at' => Carbon::create(Carbon::yesterday()->subDay(19)->toDateString()),
+                'updated_at' => Carbon::create(Carbon::yesterday()->subDay(19)->toDateString())
             ],
         ]);
     }
