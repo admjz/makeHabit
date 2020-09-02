@@ -72,8 +72,8 @@ button:hover {
 }
 
 .btn-forget {
-  font-size: 16px;
-  width: 200px;
+  font-size: 14px;
+  width: 250px;
   line-height: 3;
   color: #c81c14;
 }
@@ -133,8 +133,17 @@ button:hover {
 
 /* app.blade */
 
+.navbar-nav {
+  display: flex;
+}
+
 .nav-item {
   position: relative;
+
+}
+
+.nav-item:not(:first-child) {
+  margin-left: 20px;
 }
 
 .dropdown-menu {
@@ -424,6 +433,15 @@ button:hover {
 }
 
 @media screen and (max-width: 499px) {
+  .navbar-nav {
+    display: block;
+  }
+
+  .nav-item:not(:first-child) {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
   .container_title {
     font-size: 5vw;
   }
