@@ -28,7 +28,7 @@
           <div class="execution-date">{{ $execution->created_at->format('Y/m/d') }}</div>
           <div class="execution-contents margin-top30">
             @if (!empty($execution->contents))
-              {{ $execution->contents }}
+              {!! nl2br(e($execution->contents)) !!}
             @else
               &nbsp;
             @endif
