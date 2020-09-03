@@ -139,7 +139,6 @@ button:hover {
 
 .nav-item {
   position: relative;
-
 }
 
 .nav-item:not(:first-child) {
@@ -149,6 +148,17 @@ button:hover {
 .dropdown-menu {
   position: absolute;
   width: 100%;
+  top: 2px;
+  font-size: 16px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.nav-item > p {
+  transition: 0.5s;
+}
+
+.nav-item:hover > p {
   opacity: 0;
   transition: 0.5s;
 }
@@ -178,8 +188,6 @@ button:hover {
   height: 120px;
   width: 120px;
 }
-
-/* blade */
 
 .create-habit {
   width: 85%;
