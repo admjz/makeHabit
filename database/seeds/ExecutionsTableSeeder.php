@@ -75,16 +75,16 @@ class ExecutionsTableSeeder extends Seeder
                 'updated_at' => Carbon::create(Carbon::yesterday()->subDay(1)->toDateString())
             ],
             [
-                'habit_id' => 1,
-                'contents'   => 'Mysql',
+                'habit_id' => 2,
+                'contents'   => '腹筋50回',
                 'created_at' => Carbon::create(Carbon::yesterday()->toDateString()),
                 'updated_at' => Carbon::create(Carbon::yesterday()->toDateString())
             ],
             [
                 'habit_id' => 2,
-                'contents'   => '腹筋',
-                'created_at' => Carbon::create(Carbon::yesterday()->toDateString()),
-                'updated_at' => Carbon::create(Carbon::yesterday()->toDateString())
+                'contents'   => '腕立て伏せ50回',
+                'created_at' => Carbon::create(Carbon::now()->toTimeString()),
+                'updated_at' => Carbon::create(Carbon::now()->toTimeString())
             ],
             [
                 'habit_id' => 3,
