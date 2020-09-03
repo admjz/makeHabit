@@ -27,8 +27,7 @@ class HabitController extends Controller
     public function index()
     {
         $habits = $this->habit->getHabits(Auth::id());
-        $executions = Execution::get();
-        return view('habit.index', compact('habits', 'executions'));
+        return view('habit.index', compact('habits'));
     }
 
     /**
