@@ -15,10 +15,7 @@
                 <td colspan="2">{{ $habit->title }}</td>
               </tr>
               <tr>
-                <?php $execution = $executions->where('habit_id', "{$habit->id}")
-                                              ->pluck('created_at')
-                                              ->last();
-                ?>
+                @php ($execution = $habit->executions->pluck('created_at')->last())
                 <td colspan="2">
                     @if (isset($execution))
                       {{ $execution->diff(date("m/d H:i"))->format('%d日と%h時間  経過') }}
