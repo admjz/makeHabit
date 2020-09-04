@@ -48,7 +48,7 @@ class HabitController extends Controller
      */
     public function store(CreateHabitRequest $request)
     {
-        $inputs = $request->all();
+        $inputs = $request->input();
         $inputs['user_id'] = Auth::id();
         $this->habit->saveHabit($inputs);
         return redirect()->route('habit.index');
@@ -98,7 +98,7 @@ class HabitController extends Controller
      */
     public function update(CreateHabitRequest $request, $habitId)
     {
-        $inputs = $request->all();
+        $inputs = $request->input();
         $this->habit->updateHabit($habitId, $inputs);
         return redirect()->route('habit.index');
     }
