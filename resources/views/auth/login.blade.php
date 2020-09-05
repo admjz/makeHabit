@@ -6,9 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="container_title">ログイン</div>
-                {!! Form::open(['route' => 'login']) !!}
-                    {!! Form::hidden('email', 'Banjo@gmai.com') !!}
-                    {!! Form::hidden('password', 'banjobanjo') !!}
+                {!! Form::open(['route' => 'login.guest']) !!}
                     {!! Form::button('ゲストとしてログインする', ['class' => 'btn btn-guest margin-top50', 'type' => 'submit']) !!}
                 {!! Form::close() !!}
                 <div class="card-body margin-top50">
