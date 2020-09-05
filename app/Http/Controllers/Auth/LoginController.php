@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -36,6 +37,17 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function guestLogin(Request $request)
+    {
+        $inputs = $request->input();
+        $inputs['e-mail'] = 'Banjo@gmai.com';
+        $inputs['password'] = 'banjobanjo';
+        if (Auth::attempt(['email' => $inputs['e-mail'], 'password' => $inputs['password']])) {
+            return redirect()->route('habit.index');
+        }
+        return back();
     }
 
     public function loggedOut(Request $request)
