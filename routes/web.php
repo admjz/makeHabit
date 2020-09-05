@@ -20,3 +20,5 @@ Route::get('/home', 'HabitController@index')->name('home');
 Route::resource('habit', 'HabitController');
 
 Route::resource('execution', 'ExecutionController', ['only' => ['store', 'edit', 'update', 'destroy']]);
+
+Route::post('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
