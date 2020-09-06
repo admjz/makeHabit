@@ -1,6 +1,6 @@
 # README
 
-# makeHabit
+## makeHabit
 What makeHabit?  
 "makeHabit" is a web app that can help you create your habits.  
 Creating a habit is hard, but makeHabit can help you do it.  
