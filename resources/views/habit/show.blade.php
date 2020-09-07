@@ -17,9 +17,9 @@
           @if (isset($execDate))
             {!! Form::button('記録する！', ['type' => 'submit', 'class' => 'btn btn-add']) !!}
           @else
-            {!! Form::button('今日の分は記録済みです', ['disabled', 'type' => 'submit', 'class' => 'btn btn-add btn-disabled']) !!}
+            <div class="btn btn-add btn-disabled">今日の分は記録済みです</div>
           @endif
-        </div>
+        </>
       {!! Form::close() !!}
     </div>
     @foreach($executions as $execution)
@@ -39,7 +39,7 @@
         </div>
         <div class="delete-form margin-top30">
           {!! Form::open(['route' => ['execution.destroy', $execution->id], 'method' => 'DELETE'])!!}
-            {!! Form::button('<i class="fas fa-trash-alt fa-2x"></i>', ['type' => 'submit', 'class' => 'btn delete-btn'])!!}
+            {!! Form::button('<i class="fas fa-trash-alt fa-2x"></i>', ['type' => 'submit', 'class' => 'btn delete-btn', 'onclick' => "return confirm('この記録を削除します。よろしいですか？')"])!!}
           {!! Form::close()!!}
         </div>
       </div>
