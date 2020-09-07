@@ -17,7 +17,6 @@
               <tr>
                 @php
                   $execution = $habit->executions->pluck('created_at')->last();
-                  // dd($habit->executions->pluck('created_at'));
                 @endphp
                 <td colspan="2">
                     @if (isset($execution))
@@ -46,7 +45,7 @@
         </div>
         <div class="delete-form">
           {!! Form::open(['route' => ['habit.destroy', $habit->id], 'method' => 'DELETE'])!!}
-            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn delete-btn'])!!}
+            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn delete-btn', 'onclick' => "return confirm('このHabitを削除します。よろしいですか？')"]) !!}
           {!! Form::close()!!}
         </div>
       </div>
