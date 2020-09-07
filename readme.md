@@ -1,10 +1,10 @@
 # README
 
 ## makeHabit
-What makeHabit?
-"makeHabit" is a web app that can help you create your habits.
-Creating a habit is hard, but makeHabit can help you do it.
-I've added a login feature for you to try, so feel free to try it out!
+What makeHabit?  
+"makeHabit" is a web app that can help you create your habits.  
+Creating a habit is hard, but makeHabit can help you do it.  
+I've added a login feature for you to try, so feel free to try it out!  
 
 ## Features
 
@@ -22,7 +22,7 @@ I've added a login feature for you to try, so feel free to try it out!
 
 ## Note
 
-I don't test environments under Linux and mobile.
+- I don't test environments under Linux and mobile.
 
 ## Author
 
@@ -30,4 +30,4 @@ I don't test environments under Linux and mobile.
 
 ## License
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
